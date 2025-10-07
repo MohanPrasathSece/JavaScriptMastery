@@ -1,0 +1,14 @@
+<h1 id="one" onclick="remove(event)">One</h1>
+<h1 id= "two" onclick="remove(event)">Two</h1>
+<h1 id="three" onclick="remove(event)">Three</h1>
+<h1 id="four" onclick="remove(event)">Four</h1>
+<h1 id="four" onclick="remove(event)">Five</h1>
+<h1 id="five" onclick="remove(event)">Six</h1>
+
+
+<script>
+    function remove(event){
+        var h1 = document.getElementById(event.target.id)
+        h1.remove()
+    }
+</script>

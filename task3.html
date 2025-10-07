@@ -1,0 +1,10 @@
+<input id="inputBox" onkeyup="display()">
+<h1 id="output"></h1>
+
+<script>
+    var input = document.getElementById("inputBox")
+    var output = document.getElementById("output")
+    function display(){
+        output.textContent = input.value
+    }
+</script>
