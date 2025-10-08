@@ -1,0 +1,22 @@
+<input class="ip">
+<button class="add" onclick = addTask()>Add</button>
+
+<ul class = "ul">
+    <li class = "li">Hello 
+        <button id="del" onclick= deleteTask(event)>Delete</button>
+    </li>
+</ul>
+
+<script>
+    var ip = document.querySelector(".ip")
+    var add = document.querySelector(".add")
+    var list = document.querySelector(".ul")
+    function addTask(event){
+        var listItem = document.createElement("li")
+        listItem.innerHTML = ip.value + "  <button onclick = deleteTask(event)> Delete </button>"
+        list.append(listItem)
+    }
+    function deleteTask(event){
+        event.target.parentElement.remove()
+    }
+</script>
