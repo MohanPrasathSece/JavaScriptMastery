@@ -1,0 +1,67 @@
+<center>
+<form>
+    <table border="2" id="one">
+        <tr>
+        <th>Name</th>
+        <td><input id="name"></td>
+        </tr>
+        <tr>
+        <th>Age</th>
+        <td><input id="age"></td>
+        </tr>
+        <th>Gender</th>
+        <td>
+            <input id="gender" name="gender" type="radio" value="male"> Male
+            <input id="gender" type="radio" name="gender" value="female"> Female
+        </td>
+        <tr>
+        <th>Course</th>
+        <td>
+        <select id="course">
+            <option>JavaScript</option>
+            <option>React</option>
+            <option>Node</option>
+            <option>Express</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+        <th id="email">Email</th>
+        <td><input id="email" type="email"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <button onclick=saveDetails(event) id="but">Save</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<table id="t" border="2">
+<tr id="row">
+    <td>NAME</td>
+    <td>AGE</td>
+    <td>COURSE</td>
+    <td>GENDER</td>
+    <td>EMAIL</td>
+    <td>ACTION</td>
+</tr>
+</table>
+</center>
+
+<script>
+    var name = document.getElementById("name")
+    var age = document.getElementById("age")
+    var gender = document.getElementById("gender")
+    var course = document.getElementById("course")
+    var email = document.getElementById("email")
+
+    function saveDetails(event){
+        newItem = document.createElement(<tr>)
+        newItem.innerHTML = name.value + age.value + gender.value + course.value + email.value + "<button onclick = deleteStudent(event)>Delete</button>"
+        table.appendChild(newItem)
+    }
+    function deleteStudent(event){
+        event.target.parentElement.remove()
+    }
+</script>
