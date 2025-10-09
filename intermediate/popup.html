@@ -1,0 +1,46 @@
+<style>
+    .overlay{
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: none;
+        top: 0px;
+        left: 0px;
+        opacity: 0.8;
+        z-index : 1;
+        display: none;
+    }
+    .popup{
+        width: 40%;
+        position: absolute;
+        z-index : 3;
+        background-color: white;
+        padding: 20px;
+        color: black;
+        left : 30%;
+        border-radius : 8px;
+        display: none;
+    }
+</style>
+
+<button onclick="show()">Show</button>
+<div class="overlay"></div>
+<div class="popup">
+    <p>Tamil Nadu suspended, says Health Minister Ma. Subramanian.The inspectors failed to conduct quality checks on drugs manufactured by Sresan Pharmaceuticals, whose Coldrif cough syrup is linked to the deaths of several children in Madhya Pradesh</p>
+    <button onclick="closeBox()">Close</button>
+</div>
+
+<script>
+    var popup = document.querySelector(".popup")
+    var overlay = document.querySelector(".overlay")
+    function show(){
+        popup.style.display = "block"
+        overlay.style.display = "block"
+    }
+    function closeBox(){
+        popup.style.display = "none"
+        overlay.style.display = "none"
+    }
+
+</script>
