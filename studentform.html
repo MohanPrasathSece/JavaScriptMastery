@@ -9,11 +9,13 @@
         <th>Age</th>
         <td><input id="age"></td>
         </tr>
+        <tr>
         <th>Gender</th>
         <td>
-            <input id="gender" name="gender" type="radio" value="male"> Male
-            <input id="gender" type="radio" name="gender" value="female"> Female
+            <input name="gender" type="radio" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
         </td>
+        </tr>
         <tr>
         <th>Course</th>
         <td>
@@ -26,12 +28,12 @@
         </td>
         </tr>
         <tr>
-        <th id="email">Email</th>
+        <th>Email</th>
         <td><input id="email" type="email"></td>
         </tr>
         <tr>
             <td colspan="2" style="text-align:center;">
-                <button onclick=saveDetails(event) id="but">Save</button>
+                <button onclick=saveDetails(event) id="but" style = "background-color: green; color: white">Save</button>
             </td>
         </tr>
     </table>
@@ -50,18 +52,26 @@
 </center>
 
 <script>
-    var name = document.getElementById("name")
+    var nameInput = document.getElementById("name")
     var age = document.getElementById("age")
-    var gender = document.getElementById("gender")
     var course = document.getElementById("course")
     var email = document.getElementById("email")
-
     function saveDetails(event){
-        newItem = document.createElement(<tr>)
-        newItem.innerHTML = name.value + age.value + gender.value + course.value + email.value + "<button onclick = deleteStudent(event)>Delete</button>"
+        var gender = document.querySelector('input[name="gender"]:checked').value
+        event.preventDefault();
+        var table = document.getElementById("t")
+        newItem = document.createElement("tr")
+        newItem.innerHTML = 
+            `<td>${nameInput.value}</td>
+            <td>${age.value}</td> 
+            <td>${course.value }</td>
+            <td>${gender}</td>
+            <td>${email.value}</td>
+            <td><button onclick = deleteStudent(event) style = "background-color: red; color: white">Delete</button></td>`
+
         table.appendChild(newItem)
     }
     function deleteStudent(event){
-        event.target.parentElement.remove()
+        event.target.parentElement.parentElement.remove()
     }
 </script>

@@ -1,0 +1,75 @@
+<center>
+    <form>
+        <table border = 2>
+            <tr>
+                <th>Name</th>
+                <td><input id="name"></td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td><input id="age" type="number"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td><input type = "radio" name="gender"  value="male"> Male
+                <input type="radio" name="gender" value="female">Female
+                </td>
+            </tr>
+            <tr>
+                <th>Course</th>
+                <td>
+                    <select id="course">
+                        <option>Javascript</option>
+                        <option>React js</option>
+                        <option>Node js</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style= "text-align: center">
+                <button onclick="savedetails(event)" style = "background-color: green; color:white">Save</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+        <table id="tab" border="2">
+            <tr>
+                <td>NAME</td>
+                <td>AGE</td>
+                <td>COURSE</td>
+                <td>GENDER</td>
+                <td>EMAIL</td>
+                <td>ACTION</td>
+            </tr>
+        </table>
+</center>
+
+<script>
+    function savedetails(event){
+        var sName = document.getElementById("name")
+        var sAge = document.getElementById("age")
+        var sCourse = document.getElementById("course")
+        var sGender = document.querySelector('input[name = "gender"]:checked')
+        var sEmail = document.getElementById("email")
+        var row = document.createElement("tr")
+        var table = document.getElementById("tab")
+
+        row.innerHTML = `
+        <td>${sName.value}</td>
+        <td>${sAge.value}</td>
+        <td>${sGender}</td>
+        <td>${sCourse.value}</td>
+        <td>${sEmail.value}</td>
+        <td><button onclick=deleteStudent(event) style = "background-color: red; color: white">Delete</button</td>
+        `
+        table.appendChild(row)
+    }
+    
+    function deleteStudent(event){
+        event.target.parentElement.parentElement.remove()
+    }
+</script>
