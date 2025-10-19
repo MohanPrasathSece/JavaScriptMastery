@@ -1,7 +1,12 @@
-<button onclick="alertmsg()">Alert</button>
+<button id="one" onclick="alertmsg()">Alert</button>
 
 <script>
-    function alertmsg(){
+    var button = document.getElementById("one")
+    button.addEventListener("click", function(){
         alert("Hello")
-    }
+    })
+    
+    button.addEventListener("mouseover", function(){
+        alert("Welcome")
+    })
 </script>

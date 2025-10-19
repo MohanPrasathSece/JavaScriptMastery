@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booksky</title>
+    <link rel = "stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>Booksky</h1>
+    </div>
+    <div class="container">
+        <div class="book-container">
+            <h2>Rich Dad Poor Dad</h2>
+            <h3 style="color: black">Robert</h3>
+            <p>RichDad Poor Dad by Robert T. Kiyosaki is a personal finance classic that teaches the importance of financial education, investing, and building wealth. The book contrasts the financial philosophies of two father figures — the author’s biological father (the “Poor Dad”) and his best friend’s father (the “Rich Dad”). While the Poor Dad believed in traditional education, job security, and saving money, the Rich Dad emphasized financial literacy, entrepreneurship, and making money work for you.</p>
+            <button onclick="deleteBook(event)">Delete</button>
+        </div>
+    </div>
+    <div class="popup-overlay"></div> 
+    <div class="popup-box">
+        <h1>Add Book</h1>
+        <form>
+            <input type="text" placeholder="Book Title" id="title">
+            <input type="text" placeholder="Book Author" id="author">
+            <textarea placeholder="Short Description" id="description"></textarea>
+            <button onclick="saveBook()" id="save-popup">Save</button>
+            <button id="cancel-popup">Cancel</button>
+        </form>
+    </div>
+    <button class="add-button" id="add-button-popup">+</button>
+    
+    <script src="script/js"></script>
+</body>
+
+</html>
